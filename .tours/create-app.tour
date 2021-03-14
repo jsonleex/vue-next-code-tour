@@ -1,0 +1,100 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "createApp",
+  "steps": [
+    {
+      "file": "vue-next/packages/vue/src/index.ts",
+      "description": "从 `@vue/runtime-dom` 库中导出 `createApp` 方法",
+      "line": 90,
+      "selection": {
+        "start": {
+          "line": 90,
+          "character": 1
+        },
+        "end": {
+          "line": 91,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/runtime-dom/src/index.ts",
+      "selection": {
+        "start": {
+          "line": 54,
+          "character": 1
+        },
+        "end": {
+          "line": 81,
+          "character": 33
+        }
+      },
+      "description": "vue-next/packages/runtime-dom/src/index.ts#createApp"
+    },
+    {
+      "file": "vue-next/packages/runtime-dom/src/index.ts",
+      "line": 55,
+      "description": "1. 创建 `render`\n2. 使用 `render.createApp()` 创建 `app` 实例"
+    },
+    {
+      "file": "vue-next/packages/runtime-dom/src/index.ts",
+      "description": "创建 render",
+      "line": 34,
+      "selection": {
+        "start": {
+          "line": 34,
+          "character": 34
+        },
+        "end": {
+          "line": 34,
+          "character": 48
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/runtime-core/src/renderer.ts",
+      "description": "`render.createApp` 实际调用 `@vue/runtime-core/src/apiCreateApp.ts#createAppAPI()`",
+      "line": 2247,
+      "selection": {
+        "start": {
+          "line": 2246,
+          "character": 1
+        },
+        "end": {
+          "line": 2247,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/runtime-core/src/renderer.ts",
+      "description": "调用 `@vue/runtime-core/src/renderer.ts#baseCreateRender()` 创建 render\n\n> 这个方法有将近2000行代码，我们暂时只需要关注该方法的返回体",
+      "line": 405,
+      "selection": {
+        "start": {
+          "line": 405,
+          "character": 10
+        },
+        "end": {
+          "line": 405,
+          "character": 28
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/runtime-core/src/apiCreateApp.ts",
+      "description": "这里是 `createApp` 的底层逻辑",
+      "line": 124
+    },
+    {
+      "file": "vue-next/packages/runtime-dom/src/index.ts",
+      "description": "实例创建成功后，重写 `app.mount` 方法",
+      "line": 63
+    },
+    {
+      "file": "vue-next/packages/runtime-dom/src/index.ts",
+      "description": "返回 `app` 实例，`createApp()`执行成功。\n\n创建 `app` 实例的整个过程可以看作是：基于`@vue/runtime-core`模块构建对浏览器支持的虚拟 dom 渲染器(render)，即是 vue3 核心模板中的 `@vue/runtime-dom` 模块\n",
+      "line": 80
+    }
+  ]
+}

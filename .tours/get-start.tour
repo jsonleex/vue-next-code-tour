@@ -1,0 +1,19 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "get start",
+  "steps": [
+    {
+      "title": "clone vue-next",
+      "description": "## 首先克隆 vue-next 至本地\n\n>> git clone https://github.com/vuejs/vue-next.git\n\n\n"
+    },
+    {
+      "title": "checkout commit",
+      "description": "## 检出指定 commit\n\n>> cd vue-next && git checkout cf625dcf9d381ab2e029d27c42865287ccef0093\n"
+    },
+    {
+      "title": "yarn install",
+      "description": "## 安装依赖\n\n>> cd vue-next && yarn install\n"
+    }
+  ],
+  "isPrimary": true
+}
