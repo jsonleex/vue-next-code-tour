@@ -1,0 +1,156 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "reactive",
+  "steps": [
+    {
+      "file": "vue-next/packages/reactivity/src/index.ts",
+      "description": "## import { reactive } from '@vue/reactivity'\n\nreactive 入口",
+      "line": 18,
+      "selection": {
+        "start": {
+          "line": 18,
+          "character": 3
+        },
+        "end": {
+          "line": 18,
+          "character": 11
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/reactivity/src/reactive.ts",
+      "description": "实际调用 createReactiveObject 函数",
+      "line": 95,
+      "selection": {
+        "start": {
+          "line": 90,
+          "character": 1
+        },
+        "end": {
+          "line": 91,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/reactivity/src/reactive.ts",
+      "description": "创建代理，这里重点在于 new Proxy() 的第二个参数 Handler。\n\nbaseHandlers 实现“基础对象（Object/Function/Array/Boolean/Symbol/Number/String）”的代理\n\ncollectionHandlers 实现对\"可索引集合对象（Map/Set/WeakMap/WeakSet）\"的代理\n\n[MDN - Proxy 文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy)",
+      "line": 200,
+      "selection": {
+        "start": {
+          "line": 199,
+          "character": 65
+        },
+        "end": {
+          "line": 199,
+          "character": 77
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/reactivity/src/reactive.ts",
+      "description": "接着看一下 mutableHandlers 和 mutableCollectionHandlers",
+      "line": 94,
+      "selection": {
+        "start": {
+          "line": 93,
+          "character": 1
+        },
+        "end": {
+          "line": 94,
+          "character": 30
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/reactivity/src/baseHandlers.ts",
+      "description": "mutableHandler 将代理`javascript 基本对象`的 get/set/deletaProperty/has/ownKeys",
+      "line": 196,
+      "selection": {
+        "start": {
+          "line": 190,
+          "character": 1
+        },
+        "end": {
+          "line": 196,
+          "character": 2
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/reactivity/src/baseHandlers.ts",
+      "description": "createGeeter() 中可以看出  obj.get 实际调用 Reflect.get(target, key, receiver)",
+      "line": 94,
+      "selection": {
+        "start": {
+          "line": 94,
+          "character": 1
+        },
+        "end": {
+          "line": 95,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/reactivity/src/baseHandlers.ts",
+      "description": "在 getter 中，使用“跟踪函数（track）”收集依赖",
+      "line": 106,
+      "selection": {
+        "start": {
+          "line": 104,
+          "character": 1
+        },
+        "end": {
+          "line": 106,
+          "character": 6
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/reactivity/src/baseHandlers.ts",
+      "description": "在 setter 中使用“触发函数（trigger）”派发更新命令",
+      "line": 161,
+      "selection": {
+        "start": {
+          "line": 157,
+          "character": 1
+        },
+        "end": {
+          "line": 161,
+          "character": 8
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/reactivity/src/collectionHandlers.ts",
+      "description": "mutableCollectionHandlers 代理“可索引集合对象（Map/Set/WeakMap/WeakSet）”",
+      "line": 333,
+      "selection": {
+        "start": {
+          "line": 331,
+          "character": 1
+        },
+        "end": {
+          "line": 333,
+          "character": 2
+        }
+      }
+    },
+    {
+      "file": "vue-next/packages/reactivity/src/collectionHandlers.ts",
+      "description": "Reflect.get()",
+      "line": 327,
+      "selection": {
+        "start": {
+          "line": 321,
+          "character": 1
+        },
+        "end": {
+          "line": 327,
+          "character": 6
+        }
+      }
+    }
+  ]
+}
